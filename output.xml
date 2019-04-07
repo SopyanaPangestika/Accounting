@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190407 17:42:03.112" generator="Robot 3.0.4 (Python 2.7.13 on darwin)">
+<suite source="/Users/sopy/Workspace/AR-Robot/tests/TestCasePemilik.robot" id="s1" name="TestCasePemilik">
+<kw type="setup" name="Open Browser With Timeout" library="Setup">
+<kw name="Open Browser" library="ExtendedSelenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190407 17:42:03.480" level="INFO">Opening browser 'chrome' to base url 'http://45.76.162.57/site'</msg>
+<status status="PASS" endtime="20190407 17:42:12.626" starttime="20190407 17:42:03.479"></status>
+</kw>
+<timeout value="2 minutes"></timeout>
+<status status="PASS" endtime="20190407 17:42:12.626" starttime="20190407 17:42:03.479"></status>
+</kw>
+<test id="s1-t1" name="Login Pemilik">
+<kw name="Go To" library="ExtendedSelenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN_URL}</arg>
+</arguments>
+<msg timestamp="20190407 17:42:12.628" level="INFO">Opening url 'http://45.76.162.57/login/log'</msg>
+<status status="PASS" endtime="20190407 17:42:13.043" starttime="20190407 17:42:12.628"></status>
+</kw>
+<kw name="Login As" library="LoginPage">
+<arguments>
+<arg>${PEMILIK.USER}</arg>
+<arg>${PEMILIK.PASS}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${login_username}</arg>
+</arguments>
+<msg timestamp="20190407 17:42:13.047" level="INFO">Typing text 'pemilik' into text field 'username'</msg>
+<status status="PASS" endtime="20190407 17:42:13.215" starttime="20190407 17:42:13.047"></status>
+</kw>
+<kw name="Input Password" library="ExtendedSelenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${login_password}</arg>
+</arguments>
+<msg timestamp="20190407 17:42:13.215" level="INFO">Typing password into text field 'password'</msg>
+<status status="PASS" endtime="20190407 17:42:13.317" starttime="20190407 17:42:13.215"></status>
+</kw>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>sizzle=.btn</arg>
+</arguments>
+<msg timestamp="20190407 17:42:13.317" level="INFO">Clicking button 'sizzle=.btn'.</msg>
+<status status="PASS" endtime="20190407 17:42:15.530" starttime="20190407 17:42:13.317"></status>
+</kw>
+<status status="PASS" endtime="20190407 17:42:15.531" starttime="20190407 17:42:13.044"></status>
+</kw>
+<kw name="Notification Login Success" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>sizzle=.alert-success:contains('login berhasil')</arg>
+<arg>timeout=${TIMEOUT.SHORT}</arg>
+</arguments>
+<status status="PASS" endtime="20190407 17:42:15.550" starttime="20190407 17:42:15.531"></status>
+</kw>
+<status status="PASS" endtime="20190407 17:42:15.550" starttime="20190407 17:42:15.531"></status>
+</kw>
+<kw name="Verify Link After Login" library="LoginPage">
+<kw name="Location Should Contain" library="ExtendedSelenium2Library">
+<doc>Verifies that current URL contains `expected`.</doc>
+<arguments>
+<arg>${HOME_URL}</arg>
+</arguments>
+<msg timestamp="20190407 17:42:16.076" level="INFO">Current location contains 'http://45.76.162.57/site'.</msg>
+<status status="PASS" endtime="20190407 17:42:16.076" starttime="20190407 17:42:15.551"></status>
+</kw>
+<status status="PASS" endtime="20190407 17:42:16.076" starttime="20190407 17:42:15.550"></status>
+</kw>
+<doc>Pemilik Able to Login</doc>
+<status status="PASS" endtime="20190407 17:42:16.076" critical="yes" starttime="20190407 17:42:12.627"></status>
+</test>
+<test id="s1-t2" name="Akun Rekening Data Master Pemilik">
+<kw name="Go To" library="ExtendedSelenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${HOME_URL}</arg>
+</arguments>
+<msg timestamp="20190407 17:42:16.079" level="INFO">Opening url 'http://45.76.162.57/site'</msg>
+<status status="PASS" endtime="20190407 17:42:17.423" starttime="20190407 17:42:16.079"></status>
+</kw>
+<kw name="Verify Sidebar Menu" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>sizzle=.sidebar-menu</arg>
+<arg>timeout=${TIMEOUT.SHORT}</arg>
+</arguments>
+<status status="PASS" endtime="20190407 17:42:17.461" starttime="20190407 17:42:17.425"></status>
+</kw>
+<status status="PASS" endtime="20190407 17:42:17.461" starttime="20190407 17:42:17.424"></status>
+</kw>
+<kw name="Open Menu" library="Keywords">
+<arguments>
+<arg>Data Master</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>sizzle=.sidebar-menu li:contains(${title})</arg>
+<arg>timeout=${TIMEOUT.SHORT}</arg>
+</arguments>
+<status status="PASS" endtime="20190407 17:42:17.484" starttime="20190407 17:42:17.462"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>sizzle=.sidebar-menu li:contains(${title})</arg>
+</arguments>
+<msg timestamp="20190407 17:42:17.484" level="INFO">Clicking element 'sizzle=.sidebar-menu li:contains(Data Master)'.</msg>
+<status status="PASS" endtime="20190407 17:42:18.055" starttime="20190407 17:42:17.484"></status>
+</kw>
+<status status="PASS" endtime="20190407 17:42:18.055" starttime="20190407 17:42:17.461"></status>
+</kw>
+<kw name="Debug" library="DebugLibrary">
+<doc>Open a interactive shell, run any RobotFramework keywords.</doc>
+<kw name="Open Menu" library="Keywords">
+<arguments>
+<arg>Akun Rekening</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>sizzle=.sidebar-menu li:contains(${title})</arg>
+<arg>timeout=${TIMEOUT.SHORT}</arg>
+</arguments>
+<status status="PASS" endtime="20190407 17:44:33.621" starttime="20190407 17:44:33.594"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>sizzle=.sidebar-menu li:contains(${title})</arg>
+</arguments>
+<msg timestamp="20190407 17:44:33.621" level="INFO">Clicking element 'sizzle=.sidebar-menu li:contains(Akun Rekening)'.</msg>
+<status status="PASS" endtime="20190407 17:44:35.314" starttime="20190407 17:44:33.621"></status>
+</kw>
+<status status="PASS" endtime="20190407 17:44:35.315" starttime="20190407 17:44:33.594"></status>
+</kw>
+<kw name="Open Menu" library="Keywords">
+<arguments>
+<arg>AC-01</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>sizzle=.sidebar-menu li:contains(${title})</arg>
+<arg>timeout=${TIMEOUT.SHORT}</arg>
+</arguments>
+<status status="PASS" endtime="20190407 17:44:51.707" starttime="20190407 17:44:51.683"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>sizzle=.sidebar-menu li:contains(${title})</arg>
+</arguments>
+<msg timestamp="20190407 17:44:51.708" level="INFO">Clicking element 'sizzle=.sidebar-menu li:contains(AC-01)'.</msg>
+<status status="PASS" endtime="20190407 17:44:53.436" starttime="20190407 17:44:51.708"></status>
+</kw>
+<status status="PASS" endtime="20190407 17:44:53.436" starttime="20190407 17:44:51.683"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>sizzle=.sidebar-menu li a:contains(Akun Rekening)</arg>
+</arguments>
+<msg timestamp="20190407 17:47:46.969" level="INFO">Clicking element 'sizzle=.sidebar-menu li a:contains(Akun Rekening)'.</msg>
+<status status="PASS" endtime="20190407 17:47:48.679" starttime="20190407 17:47:46.968"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>sizzle=.box-title:contains(Akun Rekening)</arg>
+<arg>timeout=${TIMEOUT.SHORT}</arg>
+</arguments>
+<status status="PASS" endtime="20190407 17:55:00.039" starttime="20190407 17:55:00.019"></status>
+</kw>
+<status status="PASS" endtime="20190407 17:56:49.115" starttime="20190407 17:42:18.055"></status>
+</kw>
+<doc>Pemilik Able to See &amp; Click Widget Custom Menu</doc>
+<status status="PASS" endtime="20190407 17:56:49.116" critical="yes" starttime="20190407 17:42:16.078"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="ExtendedSelenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190407 17:56:49.238" starttime="20190407 17:56:49.117"></status>
+</kw>
+<status status="PASS" endtime="20190407 17:56:49.238" starttime="20190407 17:42:03.114"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TestCasePemilik" pass="2">TestCasePemilik</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
